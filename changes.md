@@ -1,5 +1,8 @@
 ## Main wip
 
+## 1.1.1.
+* Updated cqterrain to version 3.6.2
+
 ## 1.1.0
 * integrate tower code.
 

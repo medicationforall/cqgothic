@@ -14,7 +14,7 @@
 
 import cadquery as cq
 from .FlatRoof import FlatRoof
-from cadqueryhelper import series, grid
+from cadqueryhelper.grid import series, make_grid
 from cqterrain import roof
 from math import floor as math_floor
 
@@ -214,7 +214,7 @@ class DetailedRoof(FlatRoof):
 
         columns = math_floor(int_width/(tile_size + tile_padding))
         rows = math_floor(int_length/(tile_size + tile_padding))
-        tile_grid = grid.make_grid(part=tile, dim = [tile_size + tile_padding, tile_size + tile_padding], columns = columns, rows = rows)
+        tile_grid = make_grid(part=tile, dim = [tile_size + tile_padding, tile_size + tile_padding], columns = columns, rows = rows)
 
         self.tiles = tile_grid.translate((0,0,self._calc_tile_z_translate()))
 

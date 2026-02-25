@@ -13,7 +13,8 @@
 # limitations under the License.
 
 import cadquery as cq
-from cadqueryhelper import Base, shape, grid, series
+from cadqueryhelper import Base, shape
+from cadqueryhelper.grid import make_grid, series
 import math
 
 class Catwalk(Base):
@@ -169,7 +170,7 @@ class Catwalk(Base):
         rows = math.floor((self.length-self.height) / (self.floor_tile_size+self.floor_tile_padding))
         colums = math.floor((self.width-self.height) / ((self.floor_tile_size+self.floor_tile_padding)/2))
 
-        diamonds = grid.make_grid(
+        diamonds = make_grid(
             diamond,
             [self.floor_tile_size+self.floor_tile_padding, (self.floor_tile_size+self.floor_tile_padding)/2],
             rows = rows+2,

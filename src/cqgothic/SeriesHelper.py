@@ -13,7 +13,7 @@
 # limitations under the License.
 
 import cadquery as cq
-from cadqueryhelper import series
+from cadqueryhelper.grid import series
 from math import floor
 
 class SeriesHelper:

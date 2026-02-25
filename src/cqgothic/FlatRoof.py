@@ -15,7 +15,8 @@
 import cadquery as cq
 from cqterrain.door import Hatch
 from .SeriesHelper import SeriesHelper
-from cadqueryhelper import Base, series, grid
+from cadqueryhelper import Base
+from cadqueryhelper.grid import series, make_grid
 from math import floor as math_floor
 
 class FlatRoof(Base):
@@ -256,7 +257,7 @@ class FlatRoof(Base):
 
         columns = math_floor(width / (tile_space))
         rows = math_floor(length / (tile_space))
-        tile_grid = grid.make_grid(
+        tile_grid = make_grid(
             part = tile,
             dim = [tile_space, tile_space],
             columns = columns,

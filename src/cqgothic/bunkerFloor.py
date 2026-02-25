@@ -13,7 +13,7 @@
 # limitations under the License.
 
 from cqterrain import tile
-from cadqueryhelper import grid
+from cadqueryhelper.grid import make_grid
 from math import floor as math_floor
 
 def init_floor_params(self):
@@ -47,7 +47,7 @@ def make_interior_floor(self):
 
     columns = math_floor(int_width/(tile_size + tile_padding))
     rows = math_floor(int_length/(tile_size + tile_padding))
-    tile_grid = grid.make_grid(part=floor_tile, dim = [tile_size + tile_padding, tile_size + tile_padding], columns = columns, rows = rows)
+    tile_grid = make_grid(part=floor_tile, dim = [tile_size + tile_padding, tile_size + tile_padding], columns = columns, rows = rows)
     z_tile_translate = -1 * (self.height / 2 - self.floor_tile_height / 2 - floor_thickness)
 
     self.interior_tiles = tile_grid.translate((0,0,z_tile_translate))

@@ -13,7 +13,8 @@
 # limitations under the License.
 
 import cadquery as cq
-from cadqueryhelper import Base, series
+from cadqueryhelper import Base
+from cadqueryhelper.grid import series
 from cqterrain import roof, tile, Ladder
 from .FlatRoof import FlatRoof
 from .SeriesHelper import SeriesHelper
